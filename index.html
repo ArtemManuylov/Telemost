@@ -2,9 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Инструкция Яндекс Телемост</title>
-    <!-- Подключаем стиль AsciiDoc -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/asciidoctor.js/1.5.9/css/asciidoctor.min.css">
     <style>
         /* ===== ГЛОБАЛЬНЫЕ СТИЛИ ===== */
         * {
@@ -178,13 +177,11 @@
     </style>
 </head>
 <body>
-    <!-- Здесь будет отображаться ваша инструкция -->
-    <div id="content"></div>
+    <div class="doc" id="content"></div>
 
-    <!-- Подключаем JavaScript-конвертер AsciiDoc -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/asciidoctor.js/1.5.9/asciidoctor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/asciidoctor.js/1.5.9/asciidoctor.min.js">
+    </script>
     <script>
-        
         var asciidocText = `
 :note-caption: Примечание
 
@@ -311,7 +308,6 @@ image::img/sound_settings.png[width=500]
 image::img/Video_settings.png[width=500]
         `;
 
-        // Конвертируем AsciiDoc в HTML и вставляем на страницу
         var html = Asciidoctor().convert(asciidocText);
         document.getElementById('content').innerHTML = html;
     </script>
